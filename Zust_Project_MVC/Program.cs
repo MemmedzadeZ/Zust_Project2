@@ -1,8 +1,25 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Zust_Project_MVC.Entities.Data;
+using Zust_Project_MVC.Entities.Enitities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+var connection = builder.Configuration.GetConnectionString("Default");
+
+builder.Services.AddDbContext<ZustNetworkDbContext>(opt =>
+{
+    opt.UseSqlServer(connection);
+});
+
+builder.Services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
+    .AddEntityFrameworkStores<ZustNetworkDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddSignalR();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,7 +34,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zust_Project_MVC.Buisness.Abstract
+namespace Zust_Project_MVC.Core.Entities
 {
-    public interface IMessageService
+    public interface IEntity
     {
     }
 }

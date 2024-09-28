@@ -8,9 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Repostory\AbstructEntity\" />
-    <Folder Include="Repostory\ConcreteEntity\" />
+    <Compile Remove="Repostory\AbstructEntity\**" />
+    <Compile Remove="Repostory\ConcreteEntity\**" />
+    <EmbeddedResource Remove="Repostory\AbstructEntity\**" />
+    <EmbeddedResource Remove="Repostory\ConcreteEntity\**" />
+    <None Remove="Repostory\AbstructEntity\**" />
+    <None Remove="Repostory\ConcreteEntity\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
   </ItemGroup>
 
 </Project>

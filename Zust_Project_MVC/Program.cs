@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Zust_Project_MVC.Entities.Data;
@@ -14,6 +15,7 @@ builder.Services.AddDbContext<ZustNetworkDbContext>(opt =>
 {
     opt.UseSqlServer(connection);
 });
+
 
 builder.Services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
     .AddEntityFrameworkStores<ZustNetworkDbContext>()

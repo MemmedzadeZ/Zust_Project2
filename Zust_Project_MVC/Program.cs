@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Zust_Project_MVC.Entities.Data;
-using Zust_Project_MVC.Entities.Enitities;
+
+using Zust_Project_MVC.Entity.Data;
+using Zust_Project_MVC.Entity.Entities;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +13,14 @@ builder.Services.AddControllersWithViews();
 
 var connection = builder.Configuration.GetConnectionString("Default");
 
-builder.Services.AddDbContext<ZustNetworkDbContext>(opt =>
+builder.Services.AddDbContext<ZustDbContext>(opt =>
 {
-    opt.UseSqlServer(connection);
+    opt.UseSqlServer(connection, b => b.MigrationsAssembly("Zust_Project_MVC.WebUI"));
 });
 
 
 builder.Services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
-    .AddEntityFrameworkStores<ZustNetworkDbContext>()
+    .AddEntityFrameworkStores<ZustDbContext>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddSignalR();

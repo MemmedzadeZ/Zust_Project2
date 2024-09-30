@@ -19,9 +19,9 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
+	
   <ItemGroup>
-    <ProjectReference Include="..\Zust_Project_MVC.Entities\Zust_Project_MVC.Entities.csproj" />
+    <ProjectReference Include="..\Zust_Project_MVC.Entity\Zust_Project_MVC.Entity.csproj" />
   </ItemGroup>
 
 </Project>

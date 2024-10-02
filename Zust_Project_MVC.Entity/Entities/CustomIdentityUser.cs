@@ -17,11 +17,6 @@ namespace Zust_Project_MVC.Entity.Entities
 
 
 
-        public CustomIdentityUser()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
-
     }
 
 }

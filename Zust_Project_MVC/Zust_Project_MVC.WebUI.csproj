@@ -21,6 +21,7 @@
   </ItemGroup>
 	
   <ItemGroup>
+    <ProjectReference Include="..\Zust_Project_MVC.Buisnes\Zust_Project_MVC.Buisnes.csproj" />
     <ProjectReference Include="..\Zust_Project_MVC.Entity\Zust_Project_MVC.Entity.csproj" />
   </ItemGroup>
 

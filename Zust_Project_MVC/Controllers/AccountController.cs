@@ -67,11 +67,10 @@ namespace Zust_Project_MVC.WebUI.Controllers
 
 
 
-        // GET: RegisterController/Edit/5
+      
 
 
 
-        // GET: RegisterController/Delete/5
 
     }
 }

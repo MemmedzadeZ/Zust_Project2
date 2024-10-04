@@ -14,9 +14,7 @@ namespace Zust_Project_MVC.Entity.Entities
         public bool IsOnline { get; set; }
         public DateTime DisconnectTime { get; set; } = DateTime.Now;
         public string? ConnectTime { get; set; } = "";
-
-
-
+        public string? City { get; set; }
     }
 
 }

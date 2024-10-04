@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Zust_Project_MVC.Entity\Zust_Project_MVC.Entity.csproj" />
+  </ItemGroup>
+
 </Project>

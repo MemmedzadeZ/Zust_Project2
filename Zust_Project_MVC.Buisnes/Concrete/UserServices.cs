@@ -5,12 +5,20 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Zust_Project_MVC.Buisnes.Abstract;
+using Zust_Project_MVC.DataAcces.Abstracts;
 using Zust_Project_MVC.Entity.Entities;
 
 namespace Zust_Project_MVC.Buisnes.Concrete
 {
     public class UserServices : IUserServices
     {
+        private readonly IUserDal _userDal;
+
+        public UserServices(IUserDal userDal)
+        {
+            _userDal = userDal;
+        }
+
         public Task AddAsync(CustomIdentityUser entity)
         {
             throw new NotImplementedException();

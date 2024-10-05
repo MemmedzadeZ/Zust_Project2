@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Zust_Project_MVC.DataAcces\Zust_Project_MVC.DataAcces.csproj" />
     <ProjectReference Include="..\Zust_Project_MVC.Entity\Zust_Project_MVC.Entity.csproj" />
   </ItemGroup>
 

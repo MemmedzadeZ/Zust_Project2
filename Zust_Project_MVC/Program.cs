@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using Zust_Project_MVC.Buisnes.Abstract;
+using Zust_Project_MVC.Buisnes.Concrete;
 using Zust_Project_MVC.Entity.Data;
 using Zust_Project_MVC.Entity.Entities;
 
-
+/////////////////////////////////////////////////////////
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -24,6 +25,10 @@ builder.Services.AddIdentity<CustomIdentityUser, CustomIdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.AddSignalR();
+builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IUserServices, UserServices>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

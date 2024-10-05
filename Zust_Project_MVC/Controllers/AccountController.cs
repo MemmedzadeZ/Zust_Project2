@@ -15,11 +15,11 @@ namespace Zust_Project_MVC.WebUI.Controllers
         private readonly UserManager<CustomIdentityUser> _userManager;
         private readonly RoleManager<CustomIdentityRole> _roleManager;
         private readonly SignInManager<CustomIdentityUser> _signInManager;
-    private readonly IUserServices _userServices;
+        private readonly IUserServices _userServices;
 
-        public AccountController(UserManager<CustomIdentityUser> userManager, 
+        public AccountController(UserManager<CustomIdentityUser> userManager,
             RoleManager<CustomIdentityRole> roleManager,
-            SignInManager<CustomIdentityUser> signInManager, 
+            SignInManager<CustomIdentityUser> signInManager,
             IUserServices userServices)
         {
             _userManager = userManager;
@@ -60,7 +60,7 @@ namespace Zust_Project_MVC.WebUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel registervm)
         {
-            if(ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 CustomIdentityUser user = new CustomIdentityUser
                 {
@@ -69,7 +69,7 @@ namespace Zust_Project_MVC.WebUI.Controllers
                     City = registervm.City,
                 };
 
-                IdentityResult result = await _userManager.CreateAsync(user,registervm.Password);
+                IdentityResult result = await _userManager.CreateAsync(user, registervm.Password);
                 if (result.Succeeded)
                 {
                     CustomIdentityRole role = new CustomIdentityRole
@@ -93,25 +93,39 @@ namespace Zust_Project_MVC.WebUI.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //public async Task<IActionResult> LogIn(LoginViewModel loginvm)
-        //{
-        //   if(ModelState.IsValid)
-        //    {
-        //        var result =  await _signInManager.PasswordSignInAsync(loginvm.Username, loginvm.Password,loginvm.RememberMe);
-        //        if(result.Succeeded)
-        //        {
-        //            var user = await _userServices.GetAsync(u => u.UserName == model.Username);
-        //            user.isOnline = true;
-        //        }
-        //    }
-        //}
+        public async Task<IActionResult> LogIn(LoginViewModel loginvm)
+        {
+            if (ModelState.IsValid)
+            {
+
+                var result = await _signInManager.PasswordSignInAsync(
+                    loginvm.Username,
+                    loginvm.Password,
+                    loginvm.RememberMe,
+                  false
+                );
+
+                if (result.Succeeded)
+                {
+                    var user = await _userServices.GetAsync(u => u.UserName == loginvm.Username);
+                    user.IsOnline = true;
+                    await _userServices.UpdateAsync(user);
+
+                    return RedirectToAction("Index", "Home");
+                }
+
+                ModelState.AddModelError("", "Invalid LogIn");
+            }
+
+            return View(loginvm);
+        }
 
 
 
-      
 
 
 
 
-    }
+
+    };
 }

@@ -8,7 +8,7 @@ using Zust_Project_MVC.Entity.Entities;
 
 namespace Zust_Project_MVC.DataAcces.Abstracts
 {
-    //public interface IUserDal : IEFEntityRepository<CustomIdentityUser>
-    //{
-    //}
+    public interface IUserDal 
+    {
+    }
 }

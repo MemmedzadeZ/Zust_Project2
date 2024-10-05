@@ -10,10 +10,8 @@ using Zust_Project_MVC.Entity.Entities;
 
 namespace Zust_Project_MVC.DataAcces.Concrete
 {
-    //public class UserDal : EFEntityRepository<CustomIdentityUser, ZustDbContext>, IUserDal
-    //{
-    //    public UserDal(ZustDbContext context) : base(context)
-    //    {
-    //    }
-    //}
+    public class UserDal : IUserDal
+    {
+      
+    }
 }

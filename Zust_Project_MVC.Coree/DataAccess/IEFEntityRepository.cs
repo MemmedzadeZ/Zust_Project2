@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zust_Project_MVC.Coree.Entities
+namespace Zust_Project_MVC.Coree.DataAccess
 {
     public interface IEFEntityRepository<T> where T : class,IEntity,new()
 

@@ -5,7 +5,7 @@ using Zust_Project_MVC.Models;
 
 namespace Zust_Project_MVC.Controllers
 {
-    [Authorize]
+   [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

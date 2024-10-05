@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using Zust_Project_MVC.Coree.Entities;
+using Zust_Project_MVC.Coree.DataAccess;
 
 namespace Zust_Project_MVC.Coree.Repostory
 {

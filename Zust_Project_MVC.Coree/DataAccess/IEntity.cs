@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zust_Project_MVC.Coree.Entities
+namespace Zust_Project_MVC.Coree.DataAccess
 {
     public interface IEntity
     {

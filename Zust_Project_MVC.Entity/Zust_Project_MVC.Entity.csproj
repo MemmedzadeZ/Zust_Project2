@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.8" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Zust_Project_MVC.Coree\Zust_Project_MVC.Coree.csproj" />
+  </ItemGroup>
+
 </Project>

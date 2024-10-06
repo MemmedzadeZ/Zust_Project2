@@ -2,6 +2,7 @@
 @{
     Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
+@* /////////// *@
 <!-- Start Preloader Area -->
 <div class="profile-authentication-area">
     <div class="container">
@@ -42,6 +43,11 @@
 
                             <div class="lost-your-password-wrap">
                                 <a href="forgot-password.html" class="lost-your-password">Forgot password ?</a>
+                            </div>
+
+                            <div class="lost-your-password-wrap">
+                                <a asp-action="Register" asp-controller="Account" class="lost-your-password">Sign In</a>
+
                             </div>
                         </div>
                         <button type="submit" class="default-btn">Login</button>

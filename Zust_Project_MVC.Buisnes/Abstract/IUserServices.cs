@@ -15,7 +15,7 @@ namespace Zust_Project_MVC.Buisnes.Abstract
         //Task DeleteListAsync(List<CustomIdentityUser> entities);
         //Task DeleteAsync(CustomIdentityUser entity);
         //Task AddAsync(CustomIdentityUser entity);
-        //Task UpdateAsync(CustomIdentityUser entity);
+        Task UpdateAsync(CustomIdentityUser entity);
         Task<CustomIdentityUser> GetUserByIdAsync(string userId);
     }
 }

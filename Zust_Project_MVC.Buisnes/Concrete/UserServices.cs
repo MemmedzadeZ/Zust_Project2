@@ -49,9 +49,9 @@ namespace Zust_Project_MVC.Buisnes.Concrete
         //}
 
 
-        //public async Task UpdateAsync(CustomIdentityUser entity)
-        //{
-        //    await UpdateAsync(entity);
-        //}
+        public async Task UpdateAsync(CustomIdentityUser entity)
+        {
+            await UpdateAsync(entity);
+        }
     }
 }

@@ -5,7 +5,6 @@ namespace Zust_Project_MVC.Models
     public class RegisterViewModel
     {
         [Required]
-
         public string? Username { get; set; }
         [Required]
         [DataType(DataType.Password)]
@@ -15,9 +14,11 @@ namespace Zust_Project_MVC.Models
         [DataType(DataType.EmailAddress)]
 
         public string? Email { get; set; }
-        [Required]
-        public string?  City { get; set; }
 
+        //   public string? City { get; set; }
+
+        [Required]
+        public bool Privacy { get; set; }
 
     }
 }

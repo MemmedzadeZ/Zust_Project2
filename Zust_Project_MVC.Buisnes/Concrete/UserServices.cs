@@ -18,35 +18,40 @@ namespace Zust_Project_MVC.Buisnes.Concrete
         {
             _userDal = userDal;
         }
-
-        public async Task AddAsync(CustomIdentityUser entity)
+        public async Task<CustomIdentityUser> GetUserByIdAsync(string userId)
         {
-            await _userDal.AddAsync(entity);
+            return await _userDal.GetByIdAsync(userId);
         }
 
-        public async Task DeleteAsync(CustomIdentityUser entity)
-        {
-           await _userDal.DeleteAsync(entity);
-        }
+        //public async Task AddAsync(CustomIdentityUser entity)
+        //{
+        //    await _userDal.AddAsync(entity);
+        //}
 
-        public async Task DeleteListAsync(List<CustomIdentityUser> entities)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task DeleteAsync(CustomIdentityUser entity)
+        //{
+        //   await _userDal.DeleteAsync(entity);
+        //}
 
-        public async Task<CustomIdentityUser> GetAsync(Expression<Func<CustomIdentityUser, bool>> filter)
-        {
-            return await GetAsync(filter);
-        }
+        //public async Task DeleteListAsync(List<CustomIdentityUser> entities)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<List<CustomIdentityUser>> GetListAsync(Expression<Func<CustomIdentityUser, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
+        //public async Task<CustomIdentityUser> GetAsync(Expression<Func<CustomIdentityUser, bool>> filter)
+        //{
+        //    return await GetAsync(filter);
+        //}
 
-        public async Task UpdateAsync(CustomIdentityUser entity)
-        {
-            await UpdateAsync(entity);
-        }
+        //public Task<List<CustomIdentityUser>> GetListAsync(Expression<Func<CustomIdentityUser, bool>> filter = null)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+        //public async Task UpdateAsync(CustomIdentityUser entity)
+        //{
+        //    await UpdateAsync(entity);
+        //}
     }
 }

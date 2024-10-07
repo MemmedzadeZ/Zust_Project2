@@ -11,7 +11,10 @@ namespace Zust_Project_MVC.Entity.Data
 {
     public class ZustDbContext: IdentityDbContext<CustomIdentityUser, CustomIdentityRole, string>
     {
-
+        public ZustDbContext()
+        {
+            
+        }
         public ZustDbContext(DbContextOptions<ZustDbContext> options)
             :base(options) { }
         

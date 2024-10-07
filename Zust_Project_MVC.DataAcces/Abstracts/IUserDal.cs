@@ -10,5 +10,6 @@ namespace Zust_Project_MVC.DataAcces.Abstracts
 {
     public interface IUserDal :IEFEntityRepository<CustomIdentityUser>
     {
+        Task<CustomIdentityUser> GetByIdAsync(string userId);
     }
 }

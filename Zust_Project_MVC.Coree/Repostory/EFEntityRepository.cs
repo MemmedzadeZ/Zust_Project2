@@ -48,7 +48,8 @@ namespace Zust_Project_MVC.Coree.Repostory
 
         public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>>? filter = null)
         {
-            return await _context.Set<TEntity>().Where(filter).ToListAsync();
+            return 
+                await _context.Set<TEntity>().Where(filter).ToListAsync();
         }
     }
 

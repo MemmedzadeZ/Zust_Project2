@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,15 @@ namespace Zust_Project_MVC.DataAcces.Concrete
 {
     public class UserDal : EFEntityRepository<CustomIdentityUser,ZustDbContext>,IUserDal
     {
-        public UserDal(ZustDbContext context):base(context) { }
-     
+        private readonly ZustDbContext _context;
+        public UserDal(ZustDbContext context):base(context) 
+        {
+            _context = context;
+        }
+
+        public async Task<CustomIdentityUser> GetByIdAsync(string userId)
+        {
+            return await _context.Users.FindAsync(userId);
+        }
     }
 }

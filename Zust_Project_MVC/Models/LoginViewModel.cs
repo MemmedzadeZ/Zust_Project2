@@ -10,6 +10,7 @@ namespace Zust_Project_MVC.Models
         [DataType(DataType.Password)]
         public string? Password { get; set; }
         public bool RememberMe { get; set; }
+       // public string? City {  get; set; }  
 
     }
 }

@@ -95,6 +95,8 @@ namespace Zust_Project_MVC.WebUI.Controllers
 					IdentityResult result = await _userManager.CreateAsync(user, model.Password);
 					if (result.Succeeded)
 					{
+						if(!await _roleManager.RoleExistsAsync("Admin"))
+						{
 							CustomIdentityRole role = new CustomIdentityRole
 							{
 								Id = Guid.NewGuid().ToString(),
@@ -108,6 +110,7 @@ namespace Zust_Project_MVC.WebUI.Controllers
 							}
 							await _userManager.AddToRoleAsync(user, "Admin");
 							return RedirectToAction("LogIn", "Account");
+						}
 
 					}
 

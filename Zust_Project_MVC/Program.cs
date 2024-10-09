@@ -16,6 +16,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserDal, UserDal>();
 builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IImageService, ImageServices>();
 
 var connection = builder.Configuration.GetConnectionString("Default");
 

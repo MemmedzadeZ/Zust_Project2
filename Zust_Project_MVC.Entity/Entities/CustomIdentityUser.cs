@@ -11,6 +11,7 @@ namespace Zust_Project_MVC.Entity.Entities
     public class CustomIdentityUser : IdentityUser, IEntity
     {
         public string? ImageUrl { get; set; }
+		//public string ProfileURL { get; set; }
         public bool IsOnline { get; set; }
         public DateTime DisconnectTime { get; set; } = DateTime.Now;
 		public string ConnectTime { get; set; } = "";

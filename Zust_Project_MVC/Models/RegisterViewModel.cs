@@ -20,5 +20,9 @@ namespace Zust_Project_MVC.Models
         [Required]
         public bool Privacy { get; set; }
 
+        
+        public IFormFile? File { get; set; }
+        public string? ImageURL { get; set; } = "~/Models/wwwroot/assets/images/user/user.png";
+
     }
 }

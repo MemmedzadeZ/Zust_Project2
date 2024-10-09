@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Zust_Project_MVC.DataAcces\Zust_Project_MVC.DataAcces.csproj" />
     <ProjectReference Include="..\Zust_Project_MVC.Entity\Zust_Project_MVC.Entity.csproj" />
   </ItemGroup>

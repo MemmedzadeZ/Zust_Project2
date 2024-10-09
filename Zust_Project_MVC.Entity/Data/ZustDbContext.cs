@@ -17,6 +17,10 @@ namespace Zust_Project_MVC.Entity.Data
         }
         public ZustDbContext(DbContextOptions<ZustDbContext> options)
             :base(options) { }
+
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Likes> Likes { get; set; }
         
     }
 }
